@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="item_crew_image_length">160dp</dimen>
+    <dimen name="item_favorite_crew_image_length">128dp</dimen>
+</resources>

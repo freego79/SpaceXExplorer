@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SpaceX Explorer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">EXPLORER</string>
+    <string name="nav_header_subtitle">2021 Petr Fryček</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+
+    <string name="action_upcoming">Upcoming</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_asc">Sort Asc.</string>
+    <string name="action_desc">Sort Desc.</string>
+
+    <string name="menu_crews">Crews</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_launches">Launches</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="title_activity_crew_detail">CrewDetailActivity</string>
+    <string name="title_activity_launch_detail">LaunchDetailActivity</string>
+
+    <string name="lorem_ipsum_title">Lorem Ipsum"</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply placeholder text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry\'s standard placeholder text ever
+        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+        type specimen book"
+    </string>
+
+
+</resources>
