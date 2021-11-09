@@ -1,22 +1,25 @@
 package cz.freego.spacexexplorer.remote.data.response
 
+import com.squareup.moshi.Json
+
 data class Launch(
-    val links: Links?,
-    val success: Boolean?,
-    val flight_number: Int,
-    val name: String,
-    val date_unix: Long,
-    val upcoming: Boolean,
-    val id: String
-)
+    @Json(name = "links") val links: Links?,
+    @Json(name = "success") val success: Boolean?,
+    @Json(name = "flight_number") val flightNumber: Int,
+    @Json(name = "name") val name: String,
+    @Json(name = "date_unix") val dateUnix: Long,
+    @Json(name = "upcoming") val upcoming: Boolean,
+    @Json(name = "id") val id: String
+) {
+    data class Links(
+        @Json(name = "patch") val patch: Patch?,
+        @Json(name = "webcast") val webcast: String?,
+        @Json(name = "wikipedia") val wikipedia: String?
+    )
 
-data class Links(
-    val patch: Patch?,
-    val webcast: String?,
-    val wikipedia: String?
-)
+    data class Patch(
+        @Json(name = "small") val small: String?,
+        @Json(name = "large") val large: String?
+    )
+}
 
-data class Patch(
-    val small: String?,
-    val large: String?
-)

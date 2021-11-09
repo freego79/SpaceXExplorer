@@ -29,7 +29,7 @@ class LaunchDetailActivity : AppCompatActivity() {
 
         launch?.let {
             binding.toolbarLayout.title = it.name
-            val contentText = "Flight Number: ${it.flight_number}" +
+            val contentText = "Flight Number: ${it.flightNumber}" +
                     "\n\nUpcoming: ${if (it.upcoming) "Yes" else "No"}" +
                     "\n\nStatus: ${if (it.success == null) "Unknown" else if (it.success == true) "Success" else "Failed"}" +
                     "\n\nWikipedia:\n${if (it.links?.wikipedia.isNullOrEmpty()) "-" else it.links?.wikipedia}" +

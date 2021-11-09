@@ -35,7 +35,7 @@ class LaunchAdapter(val launchClickListener: OnLaunchClickListener) :
             holder.root.setOnClickListener {
                 launchClickListener.onLaunchClicked(l)
             }
-            holder.textView.text = "${l.name}\n${getDateTime(l.date_unix)}"
+            holder.textView.text = "${l.name}\n${getDateTime(l.dateUnix)}"
             if (l.links?.patch?.small != null) {
                 Glide.with(holder.itemView.context).load(l.links?.patch?.small).circleCrop()
                     .into(holder.imageView)

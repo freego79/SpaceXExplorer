@@ -131,7 +131,7 @@ class HomeFragment : Fragment(), OnFavoriteItemClickListener, OnLaunchItemClickL
             templateRoot.visibility = View.VISIBLE
             Glide.with(requireContext()).load(nextLaunch.links?.patch?.small).circleCrop().into(launchIcon)
             name.text = nextLaunch.name
-            flightNumber.text = "Flight Number: ${nextLaunch.flight_number}"
+            flightNumber.text = "Flight Number: ${nextLaunch.flightNumber}"
             templateRoot.setOnClickListener({ onLaunchItemClicked(nextLaunch) })
         }
         countdownNextLaunch(nextLaunch)
@@ -142,7 +142,7 @@ class HomeFragment : Fragment(), OnFavoriteItemClickListener, OnLaunchItemClickL
             templateRoot.visibility = View.VISIBLE
             Glide.with(requireContext()).load(lastLaunch.links?.patch?.small).circleCrop().into(launchIcon)
             name.text = lastLaunch.name
-            flightNumber.text = "Flight Number: ${lastLaunch.flight_number}"
+            flightNumber.text = "Flight Number: ${lastLaunch.flightNumber}"
             successOrTimeCount.text = "Status: " + if (lastLaunch.success == null) "Unknown"
                                                     else if (lastLaunch.success == true) "Success"
                                                     else "Failed"
@@ -161,7 +161,7 @@ class HomeFragment : Fragment(), OnFavoriteItemClickListener, OnLaunchItemClickL
     private fun doCountdownTask(handler: Handler) {
         if (_binding == null) return;
         val currentTimeSecs = System.currentTimeMillis() / 1000
-        if (nextLaunch.date_unix <= currentTimeSecs) {
+        if (nextLaunch.dateUnix <= currentTimeSecs) {
             handler.removeCallbacks(runnable)
             binding.upcomingLaucnTemplate.successOrTimeCount.text = "Status: Launched..."
         } else {
@@ -172,7 +172,7 @@ class HomeFragment : Fragment(), OnFavoriteItemClickListener, OnLaunchItemClickL
 
     private fun updateNextLaunchCountdown(currentUnixTimeSec: Long) {
         if (_binding == null) return;
-        val delta = nextLaunch.date_unix - currentUnixTimeSec
+        val delta = nextLaunch.dateUnix - currentUnixTimeSec
         val _days = delta / 86400
         val _hours = (delta - _days * 86400) / 3600
         val _mins = (delta - _days * 86400 - _hours * 3600) / 60
